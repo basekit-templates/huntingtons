@@ -23,9 +23,10 @@ Table of Contents -
    1. Default
    =============================== */
 
-body {
+body { 
     background-image: image('/images/background.png');
     font-family:@font-swatch5-font-family;
+    background-size:contain;
     margin: 0;
     padding: 0;
 }
@@ -188,7 +189,8 @@ ol, li, ul {
     text-align: center;
     padding: 20px 0 10px 0;
     min-height: 30px;
-    background-color: rgba(1, 1, 1, 0.05);
+    border-top:1px solid @color-swatch4;
+    border-bottom:1px solid @color-swatch4;
     ul {
         display: inline-block;
         list-style: none;
@@ -301,15 +303,22 @@ ol, li, ul {
    5. HEADER
    =============================== */
 
+.background-img{
+    background-image: image('/images/header.png');
+    background-repeat:no-repeat;
+    padding:100px 0px;
+    background-size:contain;
+}
+
 header {
-    background-color:@color-swatch3;
     padding:0;
+    background-color:transparent;
 
  .companyheader {
         width:100%;
         float:none;
-        background-color:@color-swatch3;
-        padding:100px 0px 120px 0px;
+        background-color:transparent;
+        padding:0px 0px 100px 0px;
         .logo, .companyname {
             text-align: center;
             float:none;
@@ -422,12 +431,13 @@ header {
                 text-align: center;
                 overflow: hidden; 
                     &:before, &:after {
+                        border-top: 2px solid @color-swatch3;
                         content: "";
                         display: inline-block;
-                        height: .1em;
                         position: relative;
                         vertical-align: middle;
-                        margin-bottom: 1.4em;
+                        width: 5%;
+                        margin-bottom: .15em;
                         @media only screen and (max-width: 480px) {
                             content: none;
                             display: block;
@@ -437,7 +447,7 @@ header {
                         }
                     }
                     &:before {
-                        right: 1em;
+                        right: 0.5em;
                         margin-left: -50%;
                         @media only screen and (max-width: 480px) {
                             right: 0;
@@ -445,7 +455,7 @@ header {
                          }
                     }
                     &:after {
-                        left: 1em;
+                        left: 0.5em;
                         margin-right: -50%;
                         @media only screen and (max-width: 480px) {
                             right: 0;
@@ -465,11 +475,11 @@ header {
             /* ITEMS */
 
             .menu-items { /* ol */
-                column-count: 3;
+                column-count: 2;
                 column-gap: 50px;
-               -moz-column-count: 3;
+               -moz-column-count: 2;
                -moz-column-gap: 50px;
-               -webkit-column-count: 3;
+               -webkit-column-count: 2;
                -webkit-column-gap : 50px;
 
                 @media @tablet { 
@@ -525,12 +535,12 @@ header {
                             margin-top: 5px;
                         }
                         .menu-item-price p {   /* standard-price */
-                            font-family:@font-swatch9-font-family;
-                            font-size:@font-swatch9-font-size;
-                            font-weight: @font-swatch9-font-weight;
-                            line-height:@font-swatch9-line-height;
-                            color: @font-swatch9-color;
-                            letter-spacing: @font-swatch9-letter-spacing;
+                            font-family:@font-swatch4-font-family;
+                            font-size:@font-swatch4-font-size;
+                            font-weight: @font-swatch4-font-weight;
+                            line-height:@font-swatch4-line-height;
+                            color: @font-swatch4-color;
+                            letter-spacing: @font-swatch4-letter-spacing;
                             padding: 0px;
                             margin: 0;
                             display: inline-block;
@@ -679,16 +689,11 @@ header {
   =============================== */
 
 footer {
-    font-family: @font-swatch5-font-family;
-    color: @font-swatch5-color;
-    font-size: @font-swatch5-font-size;
-    font-weight: @font-swatch5-font-weight;
-    line-height:@font-swatch5-line-height;
-    letter-spacing: @font-swatch5-letter-spacing;
-    margin-top: 3em;
-    min-height: 40px;
-    background-color: @color-swatch3;
-    padding:10em 0;
+    background-image: image('/images/footer.png');
+    padding:0;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-color:transparent;
 
         .widget.content {
             padding: 1em 0em 0em 0em;
@@ -717,15 +722,6 @@ footer {
         }
 }   /* end footer */ 
 
-
-.menu-header h2:before, .widget.menu .main .menu-subsection-header h2:before, .widget.menu .main .menu-subsection-header h2:after{
-                        content: "★";
-                        display: inline-block;
-                        height: .1em;
-                        position: relative;
-                        vertical-align: middle;
-                        margin-bottom: 1.4em;
-}
 /* ===============================
    8. SOCIAL BAR WIDGET / PROFILE DATA
    =============================== */
@@ -992,10 +988,6 @@ footer {
     }
     .bk-content-text h2:before, .bk-content-text h2:after {
       display:none;
-    }
-
-    .widget.menu .main .menu-header h1:before, .widget.menu .main .menu-subsection-header h1:before, .widget.menu .main .menu-header h2:before, .widget.menu .main .menu-subsection-header h2:before, .widget.menu .main .menu-header h1:after, .widget.menu .main .menu-subsection-header h1:after, .widget.menu .main .menu-header h2:after, .widget.menu .main .menu-subsection-header h2:after {
-        display:none;
     }
 
     .widget.menu .main{

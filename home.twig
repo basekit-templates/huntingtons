@@ -2,35 +2,29 @@
 {% extends "layout.twig" %}
 
 {% block content %}
-
+<div class="background-img">
+</div>
 <header>
-    <div class="headerrow wrapper">
-        <div class="socialheader">
-            {{widget('profile', 'footercolumn1socialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
-        </div>
-
-    </div>
 
         <div class="companyheader clearfix">
-            {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
-            {{widget('companyname', 'companyname', {"business": "RED ROOSTER"})|raw}}
-            {{widget('content', 'headercontent', {"content":"<p>Bar & Grill House</p>"})|raw}}
+            {{widget('content', 'headercontent', {"content":"<p>100% FRESH FOOD</p>"})|raw}}
+            {{widget('companyname', 'companyname', {"business": "HUNTINGTONS"})|raw}}
+            {{widget('content', 'headercontent', {"content":"<p>BAR & GRILL</p>"})|raw}}
         </div>
        
 </header>
 <div class="background">
 
-{{widget('menusections', 'menusections1', {})|raw}}
 
         <div class="wrapper clearfix">
+
+        {{widget('menusections', 'menusections1', {})|raw}}
 
         {{widget('menu', 'menu1', {})|raw}}
 
         </div><!--end wrapper clearfix-->
 </div>
 <footer>
-        {{widget('content', 'footercolumn1content', {"content":"<p>Red Rooster, 6770 Bertner Avenue, Houston , Texas 77030</p>"})|raw}}
-        {{widget('content', 'footercolumn2content', {"content":"<p>0141 403943</p>"})|raw}}
 </footer>
 
 {% endblock %}

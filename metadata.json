@@ -1,7 +1,7 @@
 {
-    "name":"Fusion",
-    "thumbnail":"fusion.png",
-    "screenshot":"fusion.png",
+    "name":"Huntingtons",
+    "thumbnail":"huntingtons.png",
+    "screenshot":"huntingtons.png",
     "tags": {
     "en": ["minimal", "clean", "photography", "vintage", "modern", "dark", "studio", "website", "creative", "elegant", "professional", "unique", "media", "sans-serif"],
     "es": ["minimalista", "limpio", "fotografico", "vintage", "moderno", "oscuro", "estudio", "website", "creativo", "elegante", "profesional", "unico", "comunicacion", "sans-serif"],
@@ -12,8 +12,8 @@
         "Swatch 1": {
             "color1":"#ffffff",
             "color2":"#f7f4e1",
-            "color3":"#BB0000",
-            "color4":"#000000",
+            "color3":"#74503c",
+            "color4":"#321a0f",
             "color5":"#C0C0C0",
             "color6":"#BB0000",
             "color7":"#ffffff"
@@ -78,7 +78,7 @@
             "font-size": "24px",
             "font-weight": "700",
             "line-height": "28px",
-            "color": "@color-swatch3",
+            "color": "@color-swatch4",
             "letter-spacing": "inherit"
         },
         "font4": {
@@ -90,11 +90,11 @@
             "letter-spacing": "inherit"
         },
         "font5": {
-            "font-family": "\"Oswald\", Arial, sans-serif",
+            "font-family": "\"Myriad Pro\", Helvetica, sans-serif",
             "font-size": "18px",
             "font-weight": "300",
             "line-height": "26px",
-            "color": "@color-swatch5",
+            "color": "@color-swatch3",
             "letter-spacing": "inherit"
         },
         "font6": {
@@ -102,8 +102,8 @@
             "font-size": "24px",
             "font-weight": "700",
             "line-height": "26px",
-            "color": "@color-swatch6",
-            "color-hover": "@color-swatch6",
+            "color": "@color-swatch3",
+            "color-hover": "@color-swatch4",
             "letter-spacing": "inherit",
             "background-color": "transparent",
             "background-color-hover": "transparent"
@@ -119,12 +119,12 @@
             "background-color-hover": "darken(@color-swatch1,5%)"
         },
         "font8": {
-            "font-family": "\"Oleo Script\", Arial, sans-serif",
+            "font-family": "\"Oswald\", Arial, sans-serif",
             "font-size": "32px",
-            "font-weight": "300",
-            "line-height": "32px",
-            "color": "@color-swatch1",
-            "letter-spacing": "inherit"
+            "font-weight": "700",
+            "line-height": "70px",
+            "color": "@color-swatch4",
+            "letter-spacing": "2px"
         },
         "font9": {
             "font-family": "\"Oswald\", Arial, sans-serif",
@@ -136,11 +136,11 @@
         },
         "font10": {
             "font-family": "\"Oswald\", Arial, sans-serif",
-            "font-size": "100px",
+            "font-size": "90px",
             "font-weight": "700",
-            "line-height": "100px",
-            "color": "@color-swatch1",
-            "letter-spacing": "inherit"
+            "line-height": "90px",
+            "color": "@color-swatch4",
+            "letter-spacing": "10px"
         }
     }
 }
