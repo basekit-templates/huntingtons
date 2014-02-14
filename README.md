@@ -1,3 +1,3 @@
 
-redrooster
+Huntingtons Menu Template
 ========

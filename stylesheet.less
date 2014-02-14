@@ -23,12 +23,68 @@ Table of Contents -
    1. Default
    =============================== */
 
+.bg-cover {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 body { 
-    background-image: image('/images/background.png');
+    background-image: image('/images/background.jpg');
+    background-repeat:  repeat;
+    background-position: top center; 
+    background-color: @color-swatch1;
     font-family:@font-swatch5-font-family;
-    background-size:contain;
     margin: 0;
     padding: 0;
+}
+
+.corner-container {
+    width: 100%;
+    top: 0;
+    .corner {
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        @media @tablet { 
+            width: 130px;
+            height: 130px;
+        }        
+        @media @mobile { 
+            width: 90px;
+            height: 90px;
+        }
+        @media @mobile1 { 
+            width: 60px;
+            height: 60px;
+        }
+        .bg-cover;
+        &.left {
+            background-image: image('/images/topleft.png');
+            background-repeat: no-repeat;
+            background-position: left top;
+            left: 0;
+        }
+        &.right {
+            background-image: image('/images/topright.png');
+            background-repeat: no-repeat;
+            background-position: right top;
+            right: 0;
+        }
+        &.leftbottom {
+            background-image: image('/images/bottomleft.png');
+            background-repeat: no-repeat;
+            background-position: left top;
+            left: 0;
+        }
+        &.rightbottom {
+            background-image: image('/images/bottomright.png');
+            background-repeat: no-repeat;
+            background-position: right top;
+            right: 0;
+        }
+    }
 }
 
 .wrapper {
@@ -122,9 +178,9 @@ ol, li, ul {
    2. VARIABLE MEDIA QUERIES
    =============================== */
 
-@tablet: ~"only screen and (max-width: 768px)";
-@mobile: ~"only screen and (max-width: 480px)";
-@media only screen and (max-width: 1084px);
+@tablet: ~"only screen and (max-width: 1124px)";
+@mobile: ~"only screen and (max-width: 700px)";
+@mobile1: ~"only screen and (max-width: 500px)";
 
 /* ===============================
    3. CUSTOM CSS
@@ -180,6 +236,15 @@ ol, li, ul {
     float:none;
 }
 
+.widget.menu .main{
+    background-color:transparent;
+}
+
+.background-image-layer{
+    background-color: rgba(1, 1, 1, 0.3);
+    width:100%;
+    height:520px;
+}
 
 /* ===============================
    4. MENU SECTIONS NAVIGATION
@@ -187,7 +252,7 @@ ol, li, ul {
 
 .widget.menusections {
     text-align: center;
-    padding: 20px 0 10px 0;
+    padding: 20px 0 20px 0;
     min-height: 30px;
     border-top:1px solid @color-swatch4;
     border-bottom:1px solid @color-swatch4;
@@ -202,7 +267,6 @@ ol, li, ul {
             /* Then these styles are applied */
             width: 100%;
             margin: 30px 0 0;
-            background-color: @color-swatch1;
         }
 
         /* ALIGN CENTER */
@@ -303,13 +367,6 @@ ol, li, ul {
    5. HEADER
    =============================== */
 
-.background-img{
-    background-image: image('/images/header.png');
-    background-repeat:no-repeat;
-    padding:100px 0px;
-    background-size:contain;
-}
-
 header {
     padding:0;
     background-color:transparent;
@@ -318,7 +375,7 @@ header {
         width:100%;
         float:none;
         background-color:transparent;
-        padding:0px 0px 100px 0px;
+        padding:190px 0px 100px 0px;
         .logo, .companyname {
             text-align: center;
             float:none;
@@ -396,6 +453,10 @@ header {
         width:100%;
     }
 
+    .menu-subsection {
+        border:0px;
+    }
+
     .main {
         width: 90%;
         padding-top:30px;
@@ -431,7 +492,7 @@ header {
                 text-align: center;
                 overflow: hidden; 
                     &:before, &:after {
-                        border-top: 2px solid @color-swatch3;
+                        border-top: 1px solid @color-swatch3;
                         content: "";
                         display: inline-block;
                         position: relative;
@@ -503,7 +564,7 @@ header {
                     &.menu-item-promoted { /* menu-item-promoted */
                         padding: 1.2em;
                         margin: 11px 1px 20px;
-                        border: 5px solid @color-swatch3;
+                        border: 1px solid @color-swatch3;
                         .inner-item {
                             border: 0;
                             padding: 0;
@@ -526,14 +587,29 @@ header {
                             font-family: @font-swatch3-font-family;
                             color: @font-swatch3-color;
                         }
-                        img {   /* menu-item-image */
+
+                        .menu-item-image, .menu-section-item-image {
                             border: none;
                             -webkit-border-radius: 5px;
                             -moz-border-radius: 5px;
                             border-radius: 5px;
-                            width: 100%;
-                            margin-top: 5px;
-                        }
+                            background-size: cover;
+                            background-position: center;
+                            -webkit-background-size: cover;
+                            -moz-background-size: cover;
+                            -o-background-size: cover;
+                            clear:both;
+                            }
+
+                            .menu-item-image-wrap {
+                            background-size: cover;
+                            background-position: center;
+                            -webkit-background-size: cover;
+                            -moz-background-size: cover;
+                            -o-background-size: cover;
+                            clear:both;
+                            }
+
                         .menu-item-price p {   /* standard-price */
                             font-family:@font-swatch4-font-family;
                             font-size:@font-swatch4-font-size;
@@ -578,23 +654,86 @@ header {
                             padding: 0;
                         }
                         .menu-section-item-dietary-props {
-                            display: block;
-                            margin: 0;
-                            padding: 0;
-                            float: left;
-                            .dietary-icon {
-                                background-color: @color-swatch3;
-                                width: 20px;
-                                height: 20px;
-                                background-size: 20px;
-                                margin: 5px 5px 0 0;
-                                background-repeat: no-repeat;
-                                background-position: center;
-                                display: inline-block;
-                                border-radius: 50%;
-                            }
+                                margin-top: 0.5em;
+                                padding: 0;
+                                clear: both;
+                                display: block;
+                                .dietary-icon {
+                                    background-color: @color-swatch5;
+                                    width: auto;
+                                    height: 25px;
+                                    border: 0;
+                                    -webkit-border-radius: 5px;
+                                    -moz-border-radius: 5px;
+                                    border-radius: 5px;
+                                    background-repeat: no-repeat;
+                                    background-size: 19px;
+                                    background-position: center;
+                                    display: block;
+                                    font-family:@font-swatch5-font-family;
+                                    font-size:@font-swatch5-font-size;
+                                    z-index: 9999999;
+                                    color: @color-swatch1;
+                                    margin-right: 5px;
+                                    margin-bottom: 5px;
+                                    float: left;
+                                }
+                                .vegetarian-icon {
+                                    &:before { 
+                                    content: "veggie";
+                                    padding: 0 8px;                  
+                                    }
+                                }
+                                .vegan-icon {
+                                    &:before { 
+                                    content: "vegan";
+                                    padding: 0 8px;
+                                    }
+                                }
+                                .glutenfree-icon {
+                                    &:before { 
+                                    content: "gf";
+                                    padding: 0 8px;
+                                    }
+                                }
+                                .nutfree-icon {
+                                    &:before { 
+                                    content: "nf";
+                                    padding: 0 8px;
+                                    }
+                                }
+                                .dairyfree-icon {
+                                    &:before { 
+                                    content: "df";
+                                    padding: 0 8px;
+                                    }
+                                }
+                                .not-spicy-icon {
+                                    display: none;
+                                }
+                                .spicy-icon {
+                                    &:before { 
+                                    content: "mild";
+                                    padding: 7px;
+                                    }
+                                  }
 
-                        } /* end menu-section-item-dietary-props */
+                                .medium-spicy-icon {
+                                    &:before { 
+                                    content: "medium";
+                                    padding: 7px;
+                                    }
+                                  }
+
+                                .hot-icon {
+                                    &:before { 
+                                    content: "hot";
+                                    padding: 7px;
+                                    }
+                                }
+
+                            } 
+                        }/* end me
 
                         .menu-item-description, .menu-section-item-description {
                             margin-bottom: 0.5em;
@@ -608,7 +747,7 @@ header {
             }   /* end ol .menu-items */  
 
             .menu-subsection .menu-subsection-promoted { /* PROMOTED SUB-SECTION */  
-                border: 6px solid @color-swatch3;
+                border: 1px solid @color-swatch3;
                 padding: 2em 2em 0;
                 margin-bottom: 2em;
                 position: relative;
@@ -662,12 +801,7 @@ header {
                         background-repeat: no-repeat;
                         background-position: center;
                     }
-                    .vegetarian-icon {
-                        background-image: image('/images/veggie-icon.png');
-                    }
-                    .glutenFree-icon {
-                        background-image: image('/images/gf-icon.png');
-                    }
+
                     dd {    /* text for icon */
                         font-family:@font-swatch5-font-family;
                         font-size:@font-swatch5-font-size;
@@ -689,12 +823,9 @@ header {
   =============================== */
 
 footer {
-    background-image: image('/images/footer.png');
-    padding:0;
-    background-repeat:no-repeat;
-    background-size:contain;
-    background-color:transparent;
-
+        background-color:transparent;
+        padding:0;
+        min-height:0;
         .widget.content {
             padding: 1em 0em 0em 0em;
             margin: 0 auto;
@@ -975,22 +1106,49 @@ footer {
         background-position: 12px center;
         padding-right: 0;
     }
+    
     .widget .extendednavigation a.menu-pull:after {
         right: 42%;
     }
+
     .widget.menusections a.menu-pull {
-        top:20px;
-        right:42%;
+        top:10px;
+        right:49%;
     }
-        .widget.menusections{
-        width:20%;
-        margin:0px auto;
+
+    .widget.menusections {
+        margin: 0px auto;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        padding: 20px;
     }
     .bk-content-text h2:before, .bk-content-text h2:after {
       display:none;
     }
 
     .widget.menu .main{
+        background-color:transparent;
+    }
+
+    header .companyheader .companyname a {
+          font-size: bkscale(@font-swatch1-font-size,1.1);
+          line-height:bkscale(@font-swatch1-line-height,1.1);
+          padding-bottom:0px;  
+    }
+
+    .bk-content-text p {
+        font-size: bkscale(@font-swatch5-font-size,1.2);
+        line-height:bkscale(@font-swatch5-line-height,1.2);
+    }
+
+    header .companyheader {
+        padding:150px 0px 70px 0px;
+    }
+
+}
+
+@media only screen and (max-width: 1124px) {
+        .widget.menu .main{
         background-color:transparent;
     }
 }
@@ -1011,28 +1169,35 @@ footer {
         right: 38%;
     }
 
-    .widget.menusections a.menu-pull{
-        right:38%;
+    .widget.menusections {
+        margin: 0px auto;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        padding: 20px;
     }
 
-        .widget.menusections a.pull {
+    .widget.menusections ul li {
+        margin:0;
+    }
+
+    .widget.menusections a.pull {
         top:20px;
     }
 
     header .companyheader .companyname a {
-          font-size: bkscale(@font-swatch1-font-size,1);
-          line-height:bkscale(@font-swatch1-line-height,1);
+          font-size: bkscale(@font-swatch1-font-size,0.6);
+          line-height:bkscale(@font-swatch1-line-height,0.6);
           padding-bottom:0px;  
     }
 
     .bk-content-text p {
-        font-size: bkscale(@font-swatch5-font-size,1.2);
-          line-height:bkscale(@font-swatch5-line-height,1.2);
+        font-size: bkscale(@font-swatch5-font-size,1);
+          line-height:bkscale(@font-swatch5-line-height,1);
     }
 
     h1 {
-          font-size: bkscale(@font-swatch1-font-size,0.8);
-          line-height:bkscale(@font-swatch1-line-height,0.8);
+          font-size: bkscale(@font-swatch1-font-size,0.6);
+          line-height:bkscale(@font-swatch1-line-height,0.6);
     }
 
     h2 {
@@ -1050,11 +1215,6 @@ footer {
 
     .widget.menu {
         padding:30px 0 0;
-    }
-
-    .widget.menusections{
-        width:20%;
-        margin:0px auto;
     }
 
     .widget.menu {
@@ -1079,6 +1239,10 @@ footer {
 
     .widget.menu .main{
         background-color:transparent;
+    }
+
+    header .companyheader {
+        padding:100px 0px 50px 0px;
     }
 }
 
