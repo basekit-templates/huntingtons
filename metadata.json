@@ -140,7 +140,7 @@
             "font-weight": "700",
             "line-height": "90px",
             "color": "@color-swatch7",
-            "letter-spacing": "0.05em"
+            "letter-spacing": "1px"
         }
     }
 }
