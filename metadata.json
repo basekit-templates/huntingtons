@@ -113,10 +113,10 @@
             "font-size": "18px",
             "font-weight": "700",
             "line-height": "18px",
-            "color": "@color-swatch5",
+            "color": "@color-swatch1",
             "letter-spacing": "inherit",
-            "background-color": "transparent",
-            "background-color-hover": "darken(@color-swatch1,5%)"
+            "background-color": "@color-swatch3",
+            "background-color-hover": "darken(@color-swatch3,10%)"
         },
         "font8": {
             "font-family": "\"Oswald\", Arial, sans-serif",
@@ -136,11 +136,11 @@
         },
         "font10": {
             "font-family": "\"Oswald\", Arial, sans-serif",
-            "font-size": "90px",
+            "font-size": "100px",
             "font-weight": "700",
             "line-height": "90px",
             "color": "@color-swatch7",
-            "letter-spacing": "0.1em"
+            "letter-spacing": "0.05em"
         }
     }
 }

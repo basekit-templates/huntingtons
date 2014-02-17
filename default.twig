@@ -3,36 +3,46 @@
 
 {% block content %}
 
+<div class="bk-pt-default">
 
-<div class="corner-container">
-    <div class="corner left">
-    </div>
-    <div class="corner right">
-    </div>
-</div>
-
-<div class="wrapper clearfix">
-    <header class="bk-header">
-        <div class="companyheader clearfix">
-            {{widget('content', 'headercontent', {"content":"<p>100% FRESH FOOD</p>"})|raw}}
-            {{widget('companyname', 'companyname', {"business": "HUNTINGTONS"})|raw}}
-            {{widget('content', 'headercontent', {"content":"<p>BAR & GRILL</p>"})|raw}}
-        </div>
-    </header>
-        <div class="background">
-            <div class="wrapper clearfix">
-        {{zone('main')|raw}}
-            </div><!--end wrapper clearfix-->
-        </div>
-</div><!--end wrapper clearfix-->
-
-<footer>
     <div class="corner-container">
-        <div class="corner leftbottom">
+        <div class="corner left">
         </div>
-        <div class="corner rightbottom">
+        <div class="corner right">
         </div>
     </div>
-</footer>
+
+    <div class="wrapper clearfix">
+        <header class="bk-header">
+            <div class="wrapper">
+                {% if pages|length > 1 %}
+                    {{widget('extendednavigation', 'navigationheader', {})|raw}}
+                {% endif %}
+            </div>
+            <div class="companyheader">
+                <hgroup>
+                    {{widget('content', 'headercontent', {"content":"<h3>100% FRESH FOOD</h3>"})|raw}}
+                    {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+                    {{widget('content', 'headercontent1', {"content":"<h3>BAR &amp; GRILL</h3>"})|raw}}
+                </hgroup>
+            </div>
+        </header>
+        <div class="background">
+            <div class="wrapper">
+                {{zone('main')|raw}}
+            </div>
+        </div>
+    </div>
+
+    <footer class="bk-footer">
+        <div class="corner-container">
+            <div class="corner leftbottom">
+            </div>
+            <div class="corner rightbottom">
+            </div>
+        </div>
+    </footer>
+
+</div>
 
 {% endblock %}
