@@ -324,10 +324,9 @@ footer.bk-footer {
         /* ITEMS */
 
         .menu-items { /* ol */
-        
             li {    /* menu-item */
                 position: relative;
-                display: inline-block;
+                display: block;
                 &.menu-item-promoted { /* menu-item-promoted */
                     padding: 1.2em;
                     margin: 11px 1px 20px;
@@ -338,11 +337,8 @@ footer.bk-footer {
                         margin: 0;
                     }
                 }   /* end menu-item-promoted */
-
-
-
                 .inner-item {
-                    display: inline-block;
+                    display: block;
                     border-bottom: 1px solid @color-swatch3;
                     padding-bottom: 30px;
                     margin-bottom: 30px;
@@ -379,17 +375,21 @@ footer.bk-footer {
                                 display: none;
                             }
                         }
-
-                    .menu-item-price p {   /* standard-price */
-                        font-family:@font-swatch4-font-family;
-                        font-size:@font-swatch4-font-size;
-                        font-weight: @font-swatch4-font-weight;
-                        line-height:@font-swatch4-line-height;
-                        color: @font-swatch4-color;
-                        letter-spacing: @font-swatch4-letter-spacing;
-                        padding: 0px;
-                        margin: 0;
-                        display: inline-block;
+                    .menu-item-price {
+                        display: block;
+                        margin: 10px 0;
+                        .clearfix;
+                        p {   /* standard-price */
+                            font-family:@font-swatch4-font-family;
+                            font-size:@font-swatch4-font-size;
+                            font-weight: @font-swatch4-font-weight;
+                            line-height:@font-swatch4-line-height;
+                            color: @font-swatch4-color;
+                            letter-spacing: @font-swatch4-letter-spacing;
+                            padding: 0px;
+                            margin: 0;
+                            display: inline-block;
+                        }
                     }
                     p {    /* item-description */
                         font-family:@font-swatch5-font-family;
@@ -428,6 +428,7 @@ footer.bk-footer {
                             padding: 0;
                             clear: both;
                             display: block;
+                            .clearfix;
                             .dietary-icon {
                                 background-color: @color-swatch5;
                                 width: auto;
