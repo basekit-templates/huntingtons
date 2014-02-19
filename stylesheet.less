@@ -70,9 +70,17 @@ body {
 }
 
 .wrapper {
-    width: 80%;
-    margin: 0 10%;
+    width: 90%;
+    margin: 0 5%;
 }
+
+@media only screen and (min-width: 1140px) {
+    .wrapper {
+        width: 1100px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+}
+
 
 /* ===============================
    VARIABLE MEDIA QUERIES
@@ -122,12 +130,15 @@ header.bk-header {
     }
 } 
 
-
-/* ===============================
-   FOOTER
-   =============================== */
-
-footer.bk-footer {
+body.edit {
+    .widget {
+        &.logo {
+            img {
+                border: 1px dashed red;
+                margin: 0 0 30px;
+            }
+        }
+    }
 }
 
 
@@ -259,6 +270,8 @@ footer.bk-footer {
     }
     .menu-subsection {
         border:0px;
+        padding: 0;
+        margin: 0 0 5em;
     }
 
     .main {
@@ -268,58 +281,55 @@ footer.bk-footer {
         @media @tablet {
             padding-top: 20px;
         }
-
-            /* MENU-HEADER AND SUB-SECTION HEADER */
-
-            .menu-header, .menu-subsection-header {
-                padding: 0 0 1.2em;
-                @media @tablet {
-                    padding: 1.25em 0 0.75em;
-                    h1 {
-                        font-size: bkscale(@font-swatch1-font-size,0.7);
-                    }
-                }
-                h1, h2, {    /* menu-name menu-section-name */
-                text-align: center;
-                overflow: hidden; 
-                &:before, &:after {
-                    border-top: 1px solid @color-swatch3;
-                    content: "";
-                    display: inline-block;
-                    position: relative;
-                    vertical-align: middle;
-                    width: 5%;
-                    margin-bottom: .15em;
-                    @media only screen and (max-width: 480px) {
-                        content: none;
-                        display: block;
-                        height: auto;
-                        width: auto;
-                        margin-bottom: 0;
-                    }
-                }
-                &:before {
-                    right: 0.5em;
-                    margin-left: -50%;
-                    @media only screen and (max-width: 480px) {
-                        right: 0;
-                        margin-left: 0;
-                     }
-                }
-                &:after {
-                    left: 0.5em;
-                    margin-right: -50%;
-                    @media only screen and (max-width: 480px) {
-                        right: 0;
-                        margin-left: 0;
-                     }
+        /* MENU-HEADER AND SUB-SECTION HEADER */
+        .menu-header, .menu-subsection-header {
+            padding: 0 0 1.2em;
+            @media @tablet {
+                padding: 1.25em 0 0.75em;
+                h1 {
+                    font-size: bkscale(@font-swatch1-font-size,0.7);
                 }
             }
-            p {    /* menu-description  menu-section-description  menu-availability */
-                text-align: center;       
-            }  
-        }   /* end MENU-HEADER AND SUB-SECTION HEADER */
-
+            h1, h2, {    /* menu-name menu-section-name */
+            text-align: center;
+            overflow: hidden; 
+            &:before, &:after {
+                border-top: 1px solid @color-swatch3;
+                content: "";
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                width: 5%;
+                margin-bottom: .15em;
+                @media only screen and (max-width: 480px) {
+                    content: none;
+                    display: block;
+                    height: auto;
+                    width: auto;
+                    margin-bottom: 0;
+                }
+            }
+            &:before {
+                right: 0.5em;
+                margin-left: -50%;
+                @media only screen and (max-width: 480px) {
+                    right: 0;
+                    margin-left: 0;
+                 }
+            }
+            &:after {
+                left: 0.5em;
+                margin-right: -50%;
+                @media only screen and (max-width: 480px) {
+                    right: 0;
+                    margin-left: 0;
+                 }
+            }
+        }
+        p {    /* menu-description  menu-section-description  menu-availability */
+            text-align: center;       
+        }  
+    }   /* end MENU-HEADER AND SUB-SECTION HEADER */
 
         /* ITEMS */
 
