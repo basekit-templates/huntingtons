@@ -17,7 +17,7 @@
 		{% endif %}
         <div class="companyheader">
         	<hgroup>
-        	{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+        	{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png'),"showTplWidget":"0"})|raw}}
 	            {{widget('content', 'headercontent', {"content":"<h3>100% FRESH FOOD</h3>"})|raw}}
 	            {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
 	            {{widget('content', 'headercontent1', {"content":"<h3>BAR &amp; GRILL</h3>"})|raw}}
