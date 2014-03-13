@@ -822,4 +822,31 @@ header.bk-header {
     }
 }
 
-
+/* ===============================
+   PRINT STYLES 
+   =============================== */
+.print-mixin {
+    .widget.menu .main .menu-header h1:before,
+    .widget.menu .main .menu-subsection-header h1:before,
+    .widget.menu .main .menu-header h2:before,
+    .widget.menu .main .menu-subsection-header h2:before,
+    .widget.menu .main .menu-header h1:after,
+    .widget.menu .main .menu-subsection-header h1:after,
+    .widget.menu .main .menu-header h2:after,
+    .widget.menu .main .menu-subsection-header h2:after,
+    .widget.extendednavigation {
+		display: none;
+	}
+	.widget.menu .main .menu-items li.menu-item-promoted,
+	.menu-subsection-wrapper.menu-subsection-promoted {
+		border: 1px solid #b9b9b9 !important;
+	}
+}
+ 
+@media print {
+    .print-mixin;
+}
+ 
+.bk-print {
+    .print-mixin;
+}
